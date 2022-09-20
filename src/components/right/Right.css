@@ -1,0 +1,14 @@
+.Right_Conatainer{
+    display: flex;
+    height: 52vh;
+    flex-direction: column;
+}
+.Box_One{
+    flex-grow: 1;
+    padding: 5px 0;
+    border-bottom: 0.5px solid rgb(132, 126, 126);
+}
+.Box_Two{
+    flex-grow: 1;
+    padding: 5px 0;
+}
