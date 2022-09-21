@@ -4,7 +4,7 @@
   color: whitesmoke;
   align-items: center;
   justify-content: center;
-  background: #09414c;
+  background: #4c0909;
   background: linear-gradient(84deg, #09414c 20%, #4c6b92 80%);
   background: -webkit-linear-gradient(84deg, #09414c 20%, #4c6b92 80%);
   background: -moz-linear-gradient(84deg, #09414c 20%, #4c6b92 80%);
@@ -21,16 +21,15 @@
 }
 .Left {
   flex-grow: 1;
-  height: inherit;
   min-width: 62%;
+  
 }
 .Right {
   flex-grow: 1;
-  height: inherit;
   display: flex;
   flex-direction: column;
 }
-.Input_Box {
+.Input_Box{
   position: relative;
   flex-grow: 1;
   width: 100%;
@@ -82,5 +81,10 @@ button:hover {
 @media screen and (max-width: 650px) {
   .Weather_Main {
     flex-direction: column;
+  }
+  .App_Container{
+    height: 170vh;
+    padding-top:50px;
+    align-items: flex-start;
   }
 }

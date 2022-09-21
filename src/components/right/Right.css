@@ -1,6 +1,5 @@
 .Right_Conatainer{
     display: flex;
-    height: 52vh;
     flex-direction: column;
 }
 .Box_One{
@@ -10,5 +9,39 @@
 }
 .Box_Two{
     flex-grow: 1;
-    padding: 5px 0;
+    padding: 15px 0;
+}
+.info_weather{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+.info_data{
+    display: flex;
+    justify-content: space-between;
+}
+.info_data h4{
+    font-weight:bold;
+    font-size: 13px;
+    color: rgb(182, 182, 182);
+}
+.info_data:last-child{
+    color: whitesmoke;
+}
+.sun{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sun img{
+    height: 40px;
+    width: 70px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    background-color: rgba(39, 54, 35, 0.211);
+    image-rendering: optimizeQuality;
+}
+h4 span{
+    margin-left: 10px;
 }
