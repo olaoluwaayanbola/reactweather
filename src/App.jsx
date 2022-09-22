@@ -28,7 +28,6 @@ function App() {
     }
   }
 
-
   // getting weather data from weatheria 
   const weather = async () => {
     const options =
@@ -48,17 +47,14 @@ function App() {
       console.log("weather api =>" + error)
     }
   }
-
   useEffect(() => {
     fetch()
     weather()
   }, [])
-
-  console.log(weatheria)
   return (
     <div className="App_Container">
       <div className="Weather_Main">
-        <div className="Left">
+        <div className="Left" >
           <Left
             data={state}
             weather={weatheria}
@@ -78,15 +74,15 @@ function App() {
                 className="Region_Input"
                 autoFocus="true"
               />
-              <button className="Button" onClick={
-                () => {
-                  fetch();
-                  weather();
-                  setbool(false);
-
-                  setRandom(Math.floor(Math.random() * 5));
-                }
-              } >
+              <button className="Button" onClick=
+                {
+                  () => {
+                    fetch();
+                    weather();
+                    setbool(false);
+                    setRandom(Math.floor(Math.random() * 5));
+                  }
+                }>
                 GO
               </button>
             </form>
