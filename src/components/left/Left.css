@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: flex-end;
     width:100%;
-    height:460px;
+    height:80vh;
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
@@ -12,6 +12,7 @@
     display:flex;
     margin-bottom: 25px;
     /* justify-content:space-between; */
+    gap: 20px;
     width: 60%;
     height: 15vh;
 }
@@ -19,13 +20,11 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:center;
-    margin-left:10px;   
+    align-items:center; 
 }
 .Degree{
     display: flex;
     align-items: flex-start;
-    gap: -10px;
     font-size: 12vh;
 }
 .degreesym{
@@ -40,6 +39,7 @@
 .Date{
     font-size: 3.5vh;
 }
+
 .Icon img{
     display: flex;
     align-items: center;
@@ -57,6 +57,18 @@
 }
 @media screen and (max-width:830px){
     .info_Box{
-        width: 100%
+        width: 90%
+    }
+    .Degree{
+        font-size: 10vh;
+    }
+    .degreesym{
+        font-size: 4.5vh;
+    }
+    .place{
+        font-size: 3.5vh;
+    }
+    .Date{
+        font-size: 2.5vh;
     }
 }

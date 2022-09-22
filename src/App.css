@@ -4,7 +4,6 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
-
 }
 body{
   height: 100vh;
@@ -26,7 +25,7 @@ body{
 .Left {
   flex-grow: 1;
   min-width: 62%;
-  min-height: 80vh;
+  height: 80vh;
 
 }
 .Right {
@@ -83,7 +82,7 @@ button:hover {
   background-color: #001114;
   border-color:#001114;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .Weather_Main {
     flex-direction: column;
   }

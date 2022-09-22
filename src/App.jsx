@@ -1,8 +1,10 @@
+import React from 'react'
 import './App.css';
-import Left from './components/left/Left';
 import Right from './components/right/Right';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import axios from 'axios'
+
+const Left = React.lazy(() => import('./components/left/Left'))
 function App() {
   const [state, setState] = useState({})
   const [input, setInput] = useState("")
@@ -21,7 +23,7 @@ function App() {
   // fetching backgroundImage from unsplash
   const fetch = async () => {
     try {
-      const data = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=6&query=${input}&client_id=ElihHhCfiATgmQsBphWUw24mtbALKw_I0r7jYaMqArY`)
+      const data = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=10&query=${input}&client_id=ElihHhCfiATgmQsBphWUw24mtbALKw_I0r7jYaMqArY`)
       setState(data.data.results)
     } catch (error) {
       console.log("=>" + error)
@@ -54,14 +56,16 @@ function App() {
   return (
     <div className="App_Container">
       <div className="Weather_Main">
-        <div className="Left" >
-          <Left
-            data={state}
-            weather={weatheria}
-            condition={bool}
-            random={random}
-            input={input}
-          />
+        <div className="Left">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Left
+              data={state}
+              weather={weatheria}
+              condition={bool}
+              random={random}
+              input={input}
+            />
+          </Suspense>
         </div>
         <div className="Right">
           <div className="Input_Box">
@@ -80,7 +84,7 @@ function App() {
                     fetch();
                     weather();
                     setbool(false);
-                    setRandom(Math.floor(Math.random() * 5));
+                    setRandom(Math.floor(Math.random() * 9));
                   }
                 }>
                 GO
