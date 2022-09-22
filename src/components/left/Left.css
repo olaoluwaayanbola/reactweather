@@ -9,7 +9,66 @@
     background-size: cover;
 }
 .info_Box{
-    margin-bottom: 15px;
-    width: 70%;
+    display:flex;
+    margin-bottom: 25px;
+    /* justify-content:space-between; */
+    gap: 20px;
+    width: 60%;
     height: 15vh;
+}
+.Box_One_Info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center; 
+}
+.Degree{
+    display: flex;
+    align-items: flex-start;
+    font-size: 12vh;
+}
+.degreesym{
+    font-weight: bold;
+    font-size: 9vh;
+}
+.place{
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 5vh;
+}
+.Date{
+    font-size: 3.5vh;
+}
+
+.Icon img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+}
+.un-render{
+    height: 100%;
+    width: 100%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (max-width:830px){
+    .info_Box{
+        width: 90%
+    }
+    .Degree{
+        font-size: 10vh;
+    }
+    .degreesym{
+        font-size: 4.5vh;
+    }
+    .place{
+        font-size: 3.5vh;
+    }
+    .Date{
+        font-size: 2.5vh;
+    }
 }

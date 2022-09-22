@@ -20,7 +20,7 @@ const Right = ({ data }) => {
           <h4>
             Sun Rise
             <span className='time'>
-              {hour + "-" + minutes + "-" + Seconds} am
+              {hour + ":" + minutes + ":" + Seconds} am
             </span>
           </h4>
           <span>
@@ -31,10 +31,9 @@ const Right = ({ data }) => {
           <h4>
             Sun Set
             <span className="time">
-              {houru + "-" + minutesu + "-" + Secondsu} pm
+              {houru + ":" + minutesu + ":" + Secondsu} pm
             </span>
           </h4>
-
           <span>
             <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/1723310/sunrise-clipart-md.png" alt="" />
           </span>
