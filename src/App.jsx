@@ -1,29 +1,29 @@
 import React from 'react'
 import './App.css';
 import Right from './components/right/Right';
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, Suspense, useRef } from 'react'
 import axios from 'axios'
 
 const Left = React.lazy(() => import('./components/left/Left'))
 function App() {
   const [state, setState] = useState({})
-  const [input, setInput] = useState("")
   const [weatheria, setweather] = useState({})
   const [bool, setbool] = useState(true)
   const [random, setRandom] = useState(0)
 
-  // handle form
-  const handleinput = (e) => {
-    setInput(e.target.value)
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  const input = useRef("lagos")
+
+  // Geolocation --implemented then removed
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     input.current = { lat: position.coords.latitude, lon: position.coords.longitude }
+  //   })
+  // }, [])
 
   // fetching backgroundImage from unsplash
   const fetch = async () => {
     try {
-      const data = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=10&query=${input}&client_id=ElihHhCfiATgmQsBphWUw24mtbALKw_I0r7jYaMqArY`)
+      const data = await axios.get(`https://api.unsplash.com/search/photos?page=1&per_page=10&query=${input.current}&client_id=ElihHhCfiATgmQsBphWUw24mtbALKw_I0r7jYaMqArY`)
       setState(data.data.results)
     } catch (error) {
       console.log("=>" + error)
@@ -36,7 +36,7 @@ function App() {
     {
       method: 'GET',
       url: 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather',
-      params: { city: `${input}` },
+      params: { city: `${input.current}` },
       headers: {
         'X-RapidAPI-Key': '862b001e0cmsh956a88122e9550cp19f1a9jsn71cb258cff8a',
         'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
@@ -50,9 +50,14 @@ function App() {
     }
   }
   useEffect(() => {
-    fetch()
+    fetch();
+    setbool(false);
     weather()
+    // setRandom(Math.floor(Math.random() * 9));
+    // const timer = setTimeout(() => weather(), 1500);
+    // return () => clearTimeout(timer);
   }, [])
+
   return (
     <div className="App_Container">
       <div className="Weather_Main">
@@ -63,20 +68,19 @@ function App() {
               weather={weatheria}
               condition={bool}
               random={random}
-              input={input}
+              input={input.current}
             />
           </Suspense>
         </div>
         <div className="Right">
           <div className="Input_Box">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => { e.preventDefault() }}>
               <input
                 type="text"
-                value={input}
-                onChange={handleinput}
+                autoFocus={true}
                 placeholder="Region"
                 className="Region_Input"
-                autoFocus="true"
+                onChange={(e) => { input.current = e.target.value }}
               />
               <button className="Button" onClick=
                 {
