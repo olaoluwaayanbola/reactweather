@@ -4,12 +4,10 @@ import "./Left.css";
 
 const Left = ({ data, condition, random, input, weather }) => {
     const src = data[random]?.urls.raw
-
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0');
     let yyyy = today.getFullYear();
-
     today = mm + '-' + dd + '-' + yyyy;
     return (
         <div class='Left_Container'>
@@ -47,11 +45,13 @@ const Left = ({ data, condition, random, input, weather }) => {
                                             <img
                                                 src={pop}
                                                 alt="icon-weather"
-                                            /> :
+                                            />
+                                            :
                                             <img className="cloudy"
                                                 src={pop2}
                                                 style={{ width: "200px", height: "100px", marginLeft: "-50px" }}
-                                                alt="icon-weather" />
+                                                alt="icon-weather"
+                                            />
                                     }
                                 </span>
                             </div>
