@@ -83,6 +83,9 @@ button:hover {
   border-color:#001114;
 }
 @media screen and (max-width: 750px) {
+  .Left{
+    height: 55vh;
+  }
   .Weather_Main {
     flex-direction: column;
   }
