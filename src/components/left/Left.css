@@ -55,7 +55,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-@media screen and (max-width:830px){
+@media screen and (max-width:630px){
+    .Box_One_Info img{
+        display: none;
+    }
     .info_Box{
         width: 90%
     }
@@ -71,4 +74,9 @@
     .Date{
         font-size: 2.5vh;
     }
+}
+@media screen and (max-width: 750px) {
+  .img_c{
+    height: 55vh;
+  }
 }
