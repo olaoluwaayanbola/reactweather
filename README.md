@@ -1,14 +1,14 @@
 # Weather app #
 <p>
-  A user-friendly and powerful admin dashboard built with the latest technologies such as Redux-Toolkit, Recharts, and Material-UI React. This dashboard provides an     intuitive way of managing and visualizing data for business purposes.
+    A weather app built with React that provides the current weather forecast for any location entered by the user. This app not only displays the weather information,     but also enhances the user experience with dynamic image rendering of the location.
 </p>
 
 ## Features ##
 <ol>
-  <li>Dynamic data visualization using Recharts</li>
-  <li>State management with Redux-Toolkit</li>
-  <li>Customizable and extendable design</li>
-  <li>User-friendly interface with Material-UI React</li>
+  <li>Dynamic image rendering of the location</li>
+  <li>Real-time weather information for any location</li>
+  <li>User-friendly interface with visually appealing design</li>
+  <li>Mobile-responsive design for optimal user experience on any device</li>
 </ol>
 
 ## Getting Started ##
@@ -19,12 +19,12 @@
 1. Clone the repository
 ---------------------
 ```
-$ git clone https:https://github.com/olaoluwaayanbola/react-admin-dash/
+$ git clone https://github.com/olaoluwaayanbola/reactweather
 ```
 2. Navigate to the directory:
 ---------------------
 ```
-$ cd react-admin-dash
+$ cd reactweather
 ```
 3. Install dependencies:
 ---------------------
@@ -39,5 +39,3 @@ $ npm start
  
 ## Contribute ##
 This is an open-source project and contributions are always welcome! Feel free to raise an issue or make a pull request.
-
-### [Live Site](https://https://react-admin-fxx.netlify.app)
