@@ -11,7 +11,7 @@
   <li>Mobile-responsive design for optimal user experience on any device</li>
 </ol>
 
-## Getting Started ##
+## Getting Started  ##
 <p>
   These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 </p>
